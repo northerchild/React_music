@@ -12,13 +12,12 @@ function Formulario({consultarAPILetra}){
             [e.target.name] : e.target.value
         })
     }
-
-    //Cuando se envia la información
-    const enviarInformacion = e =>{
+    const enviarInformacion = e => {
         e.preventDefault();
-        consultarAPILetra(busqueda);
-    }
 
+        consultarAPILetra(busqueda);
+
+    }
     return (
         <div className="bg-info">
           <div className="container">
