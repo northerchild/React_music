@@ -1,6 +1,7 @@
 import React, {useState, useEffect, Fragment} from 'react';
 import Formulario from './components/Formulario';
 import Cancion from './components/Cancion';
+import Informacion from './components/Informacion';
 import axios from 'axios';
 function App() {
   const [artista, agregarArtista] = useState('');
@@ -43,7 +44,7 @@ useEffect(
       <Formulario  consultarAPILetra={consultarAPILetra}/>
       <div className="container mt-5">
         <div className="row">
-          <div className="col-md-6"></div>
+          <div className="col-md-6"><Informacion info={info}/></div>
           <div className="col-md-6">
             <Cancion letra={letra}/>
           </div>
