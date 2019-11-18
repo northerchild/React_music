@@ -7,6 +7,7 @@ function App() {
   const [letra, agregarLetra] = useState([]);
   const [info, agregarInfo] = useState({});
 
+  //Metodo para consultar letra
   const consultarAPILetra = async busqueda => {
     const {artista, cancion} = busqueda;
     const url = `https://api.lyrics.ovh/v1/${artista}/${cancion}`;
@@ -20,6 +21,22 @@ function App() {
     // almacenar la letra en el state
     agregarLetra(resultado.data.lyrics);
 } 
+
+// Método para consultar la API de Información
+const consultarAPIInfo = async () => {
+  if(artista){
+    const url = `https://theaudiodb.com/api/v1/json/1/search.php?s=${artista}`;
+    const resultado = await axios(url);
+    agregarInfo(resultado.data.artists[0]);
+     //console.log(resultado);
+  }
+}
+
+useEffect(
+  ()=>{
+    consultarAPIInfo();
+  },[artista]
+)
 
   return (
     <Fragment>
