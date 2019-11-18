@@ -1,10 +1,13 @@
 import React, {useState, useEffect, Fragment} from 'react';
-
+import Formulario from './components/Formulario';
 function App() {
+  const [artista, agregarArtista] = useState('');
+  const [letra, agregarLetra] = useState([]);
+  const [info, agregarInfo] = useState({});
   return (
-    <div className="App">
-      <h1>Hola</h1>
-    </div>
+    <Fragment>
+      <Formulario />
+    </Fragment>
   );
 }
 
